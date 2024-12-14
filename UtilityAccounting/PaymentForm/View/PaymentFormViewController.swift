@@ -58,7 +58,7 @@ class PaymentFormViewController: UIViewController {
         statusButton.layer.borderColor = UIColor.border.cgColor
         
         let servicesData: [String] = ServiceType.allCases.map { $0.rawValue }
-        serviceDropDown.backgroundColor = .white
+        serviceDropDown.backgroundColor = .baseWhite
         serviceDropDown.setupCornerRadius(8)
         serviceDropDown.dataSource = servicesData
         serviceDropDown.anchorView = serviceView
@@ -81,7 +81,7 @@ class PaymentFormViewController: UIViewController {
         }
         
         let statusesData: [String] = PaymentStatus.allCases.map { $0.rawValue }
-        statusDropDown.backgroundColor = .white
+        statusDropDown.backgroundColor = .baseWhite
         statusDropDown.setupCornerRadius(8)
         statusDropDown.dataSource = statusesData
         statusDropDown.anchorView = statusView

@@ -40,6 +40,11 @@
 		6B25026D2D0C6245004B50C1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25026C2D0C6245004B50C1 /* CoreDataManager.swift */; };
 		6B2502702D0C6413004B50C1 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25026F2D0C6413004B50C1 /* MenuViewModel.swift */; };
 		6B2502732D0C78F5004B50C1 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502722D0C78F5004B50C1 /* ExpenseModel.swift */; };
+		6B2502782D0DC9B0004B50C1 /* PaymentHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2502772D0DC9B0004B50C1 /* PaymentHistoryViewController.xib */; };
+		6B2502792D0DC9B0004B50C1 /* PaymentHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502762D0DC9B0004B50C1 /* PaymentHistoryViewController.swift */; };
+		6B25027D2D0DCC02004B50C1 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B25027C2D0DCC02004B50C1 /* HistoryTableViewCell.xib */; };
+		6B25027E2D0DCC02004B50C1 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B25027B2D0DCC02004B50C1 /* HistoryTableViewCell.swift */; };
+		6B2502812D0DD5AD004B50C1 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502802D0DD5AD004B50C1 /* HistoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +83,11 @@
 		6B25026C2D0C6245004B50C1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6B25026F2D0C6413004B50C1 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		6B2502722D0C78F5004B50C1 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
+		6B2502762D0DC9B0004B50C1 /* PaymentHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryViewController.swift; sourceTree = "<group>"; };
+		6B2502772D0DC9B0004B50C1 /* PaymentHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistoryViewController.xib; sourceTree = "<group>"; };
+		6B25027B2D0DCC02004B50C1 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		6B25027C2D0DCC02004B50C1 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		6B2502802D0DD5AD004B50C1 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		AD543F68C860A44C2232D188 /* Pods-UtilityAccounting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilityAccounting.debug.xcconfig"; path = "Target Support Files/Pods-UtilityAccounting/Pods-UtilityAccounting.debug.xcconfig"; sourceTree = "<group>"; };
 		BFF06CA88CA74DC5CC408598 /* Pods-UtilityAccounting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilityAccounting.release.xcconfig"; path = "Target Support Files/Pods-UtilityAccounting/Pods-UtilityAccounting.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,10 +142,11 @@
 		6B2502272D0C1BFB004B50C1 /* UtilityAccounting */ = {
 			isa = PBXGroup;
 			children = (
-				6B25026B2D0C620C004B50C1 /* CoreData */,
+				6B2502742D0DC985004B50C1 /* History */,
 				6B2502562D0C28BB004B50C1 /* PaymentForm */,
 				6B2502502D0C23DC004B50C1 /* Menu */,
 				6B2502312D0C1C28004B50C1 /* Root */,
+				6B25026B2D0C620C004B50C1 /* CoreData */,
 				6B2502322D0C1C89004B50C1 /* Extensions */,
 				6B25021D2D0C1BFB004B50C1 /* AppDelegate.swift */,
 				6B25021E2D0C1BFB004B50C1 /* Assets.xcassets */,
@@ -273,6 +284,42 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6B2502742D0DC985004B50C1 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				6B25027F2D0DD598004B50C1 /* ViewModel */,
+				6B25027A2D0DCBEC004B50C1 /* Cell */,
+				6B2502752D0DC991004B50C1 /* View */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		6B2502752D0DC991004B50C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B2502762D0DC9B0004B50C1 /* PaymentHistoryViewController.swift */,
+				6B2502772D0DC9B0004B50C1 /* PaymentHistoryViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B25027A2D0DCBEC004B50C1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B25027B2D0DCC02004B50C1 /* HistoryTableViewCell.swift */,
+				6B25027C2D0DCC02004B50C1 /* HistoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6B25027F2D0DD598004B50C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B2502802D0DD5AD004B50C1 /* HistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,12 +383,14 @@
 			files = (
 				6B2502672D0C513B004B50C1 /* PaymentTableViewCell.xib in Resources */,
 				6B25022D2D0C1BFB004B50C1 /* Assets.xcassets in Resources */,
+				6B25027D2D0DCC02004B50C1 /* HistoryTableViewCell.xib in Resources */,
 				6B25024D2D0C1DDA004B50C1 /* Poppins-SemiBold.ttf in Resources */,
 				6B25024E2D0C1DDA004B50C1 /* Poppins-Regular.ttf in Resources */,
 				6B25024F2D0C1DDA004B50C1 /* Poppins-Medium.ttf in Resources */,
 				6B25022F2D0C1BFB004B50C1 /* LaunchScreen.storyboard in Resources */,
 				6B2502542D0C2677004B50C1 /* MenuViewController.xib in Resources */,
 				6B2502302D0C1BFB004B50C1 /* Root.storyboard in Resources */,
+				6B2502782D0DC9B0004B50C1 /* PaymentHistoryViewController.xib in Resources */,
 				6B25025D2D0C2A58004B50C1 /* PaymentFormViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +448,8 @@
 				6B2502412D0C1D13004B50C1 /* UIView.swift in Sources */,
 				6B2502422D0C1D13004B50C1 /* String.swift in Sources */,
 				6B2502552D0C2677004B50C1 /* MenuViewController.swift in Sources */,
+				6B2502812D0DD5AD004B50C1 /* HistoryViewModel.swift in Sources */,
+				6B25027E2D0DCC02004B50C1 /* HistoryTableViewCell.swift in Sources */,
 				6B2502432D0C1D13004B50C1 /* ShadowView.swift in Sources */,
 				6B2502702D0C6413004B50C1 /* MenuViewModel.swift in Sources */,
 				6B2502442D0C1D13004B50C1 /* Date.swift in Sources */,
@@ -407,6 +458,7 @@
 				6B2502462D0C1D13004B50C1 /* BaseButton.swift in Sources */,
 				6B2502472D0C1D13004B50C1 /* Font.swift in Sources */,
 				6B2502632D0C428C004B50C1 /* PaymentFormViewModel.swift in Sources */,
+				6B2502792D0DC9B0004B50C1 /* PaymentHistoryViewController.swift in Sources */,
 				6B2502592D0C28CE004B50C1 /* PaymentModel.swift in Sources */,
 				6B2502482D0C1D13004B50C1 /* FilterButton.swift in Sources */,
 				6B25026D2D0C6245004B50C1 /* CoreDataManager.swift in Sources */,

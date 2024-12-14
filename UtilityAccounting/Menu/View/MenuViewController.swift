@@ -161,6 +161,10 @@ class MenuViewController: UIViewController {
         }
         self.navigationController?.pushViewController(paymentForm, animated: true)
     }
+    
+    @IBAction func clickedHistoryPayment(_ sender: BaseButton) {
+        self.pushViewController(PaymentHistoryViewController.self)
+    }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
