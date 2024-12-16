@@ -52,7 +52,7 @@ class MenuViewModel {
         let paidPayments = data.filter({ $0.status == 0 })
 
         let filteredPayments = paidPayments.filter { payment in
-            guard let paidDate = payment.paidDate else { return false }
+            guard let paidDate = payment.date else { return false }
             return calendar.compare(paidDate, to: start, toGranularity: selectedPeriod == 0 ? .month : .year) != .orderedAscending
         }
         let water = filteredPayments.filter { $0.service == 0 }.reduce(0.0) { $0 + ($1.amount ?? 0.0) }

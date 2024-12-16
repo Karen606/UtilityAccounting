@@ -19,15 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9n-oo-eEp">
-                        <rect key="frame" x="13" y="0.0" width="291" height="53"/>
+                        <rect key="frame" x="13" y="8" width="291" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="baseBlack"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="g9n-oo-eEp" secondAttribute="bottom" id="3cM-VH-Qrp"/>
-                    <constraint firstItem="g9n-oo-eEp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aPe-oj-LcL"/>
+                    <constraint firstAttribute="bottom" secondItem="g9n-oo-eEp" secondAttribute="bottom" constant="8" id="3cM-VH-Qrp"/>
+                    <constraint firstItem="g9n-oo-eEp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="aPe-oj-LcL"/>
                     <constraint firstAttribute="trailing" secondItem="g9n-oo-eEp" secondAttribute="trailing" constant="16" id="rrb-xR-IYa"/>
                     <constraint firstItem="g9n-oo-eEp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="xgj-tJ-IXS"/>
                 </constraints>

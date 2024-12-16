@@ -44,7 +44,6 @@ class CoreDataManager {
                 payment.service = Int32(paymentModel.service ?? 0)
                 payment.status = Int32(paymentModel.status ?? 0)
                 payment.amount = paymentModel.amount ?? 0
-                payment.paidDate = paymentModel.paidDate
                 try backgroundContext.save()
                 DispatchQueue.main.async {
                     completion(nil)
@@ -65,7 +64,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var paymentsModel: [PaymentModel] = []
                 for result in results {
-                    let paymentModel = PaymentModel(id: result.id ?? UUID(), service: Int(result.service), amount: result.amount, date: result.date, status: Int(result.status), paidDate: result.paidDate)
+                    let paymentModel = PaymentModel(id: result.id ?? UUID(), service: Int(result.service), amount: result.amount, date: result.date, status: Int(result.status))
                     paymentsModel.append(paymentModel)
                 }
                 DispatchQueue.main.async {
@@ -88,8 +87,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 for payment in results {
                     payment.status = Int32(0)
-                    payment.paidDate = Date().stripTime()
-                }
+                 }
                 try backgroundContext.save()
                 DispatchQueue.main.async {
                     completion(nil)
@@ -97,6 +95,63 @@ class CoreDataManager {
             } catch {
                 DispatchQueue.main.async {
                     completion(error)
+                }
+            }
+        }
+    }
+    
+    func saveReminder(reminderModel: ReminderModel, completion: @escaping (Error?) -> Void) {
+        let id = reminderModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let reminder: Reminder
+                
+                if let existingReminder = results.first {
+                    reminder = existingReminder
+                } else {
+                    reminder = Reminder(context: backgroundContext)
+                    reminder.id = id
+                }
+                
+                reminder.date = reminderModel.date
+                reminder.service = Int32(reminderModel.service ?? 0)
+                reminder.time = reminderModel.time
+                reminder.periodicity = Int32(reminderModel.periodicity ?? 0)
+                
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+    
+    func fetchReminders(completion: @escaping ([ReminderModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var remindersModel: [ReminderModel] = []
+                for result in results {
+                    let reminderModel = ReminderModel(id: result.id ?? UUID(), service: Int(result.service), date: result.date, time: result.time, periodicity: Int(result.periodicity))
+                    remindersModel.append(reminderModel)
+                }
+                DispatchQueue.main.async {
+                    completion(remindersModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
                 }
             }
         }

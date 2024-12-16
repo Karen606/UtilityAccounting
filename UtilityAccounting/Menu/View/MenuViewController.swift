@@ -47,7 +47,13 @@ class MenuViewController: UIViewController {
         self.periodDropDown.bottomOffset = CGPoint(x: self.periodButton.frame.minX, y: self.periodButton.frame.maxY + 2)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        paymentsContentView.layer.borderColor = UIColor.border.cgColor
+        expensesContentView.layer.borderColor = UIColor.border.cgColor
+    }
+    
     func setupUI() {
+        setNavigationLeftButtons()
         setNaviagtionRightButton()
         paidTitleLabel.font = .regular(size: 16)
         paidSumLabel.font = .medium(size: 40)
@@ -59,20 +65,18 @@ class MenuViewController: UIViewController {
         addButton.titleLabel?.font = .medium(size: 18)
         servicesLabels.forEach({ $0.font = .medium(size: 12)})
         paymentsContentView.layer.borderWidth = 1
-        paymentsContentView.layer.borderColor = UIColor.border.cgColor
         expensesContentView.layer.borderWidth = 1
-        expensesContentView.layer.borderColor = UIColor.border.cgColor
         servicesTableView.register(UINib(nibName: "PaymentTableViewCell", bundle: nil), forCellReuseIdentifier: "PaymentTableViewCell")
         servicesTableView.delegate = self
         servicesTableView.dataSource = self
         
         let servicesData: [String] = Period.allCases.map { $0.rawValue }
-        periodDropDown.backgroundColor = .white
+        periodDropDown.backgroundColor = .baseWhite
         periodDropDown.setupCornerRadius(8)
         periodDropDown.dataSource = servicesData
         periodDropDown.anchorView = expensesContentView
         periodDropDown.direction = .bottom
-        DropDown.appearance().textColor = .black
+        DropDown.appearance().textColor = .baseBlack
         DropDown.appearance().textFont = .regular(size: 12) ?? .boldSystemFont(ofSize: 18)
         DropDown.appearance().selectionBackgroundColor = .clear
         periodDropDown.addShadow()
@@ -160,10 +164,6 @@ class MenuViewController: UIViewController {
             }
         }
         self.navigationController?.pushViewController(paymentForm, animated: true)
-    }
-    
-    @IBAction func clickedHistoryPayment(_ sender: BaseButton) {
-        self.pushViewController(PaymentHistoryViewController.self)
     }
 }
 

@@ -53,9 +53,9 @@ class PaymentFormViewController: UIViewController {
         saveButton.titleLabel?.font = .medium(size: 18)
         
         serviceButton.layer.borderWidth = 1
-        serviceButton.layer.borderColor = UIColor.border.cgColor
+        serviceButton.layer.borderColor = UIColor.fieldBorder.cgColor
         statusButton.layer.borderWidth = 1
-        statusButton.layer.borderColor = UIColor.border.cgColor
+        statusButton.layer.borderColor = UIColor.fieldBorder.cgColor
         
         let servicesData: [String] = ServiceType.allCases.map { $0.rawValue }
         serviceDropDown.backgroundColor = .baseWhite
@@ -63,7 +63,7 @@ class PaymentFormViewController: UIViewController {
         serviceDropDown.dataSource = servicesData
         serviceDropDown.anchorView = serviceView
         serviceDropDown.direction = .bottom
-        DropDown.appearance().textColor = .black
+        DropDown.appearance().textColor = .baseBlack
         DropDown.appearance().textFont = .regular(size: 15) ?? .boldSystemFont(ofSize: 18)
         DropDown.appearance().selectionBackgroundColor = .clear
         serviceDropDown.addShadow()

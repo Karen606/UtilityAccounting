@@ -13,7 +13,6 @@ struct PaymentModel {
     var amount: Double?
     var date: Date?
     var status: Int?
-    var paidDate: Date?
 }
 
 enum ServiceType: String, CaseIterable {

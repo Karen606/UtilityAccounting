@@ -13,9 +13,6 @@ class PaymentFormViewModel {
     private init() {}
     
     func save(completion: @escaping (Error?) -> Void) {
-        if payment.status == 0 {
-            payment.paidDate = Date().stripTime()
-        }
         CoreDataManager.shared.savePayment(paymentModel: payment, completion: completion)
     }
     

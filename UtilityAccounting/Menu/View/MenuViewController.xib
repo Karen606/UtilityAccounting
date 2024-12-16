@@ -45,7 +45,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3T-My-RtU">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="717"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNp-km-oLZ">
                                     <rect key="frame" x="10" y="38" width="373" height="267"/>
@@ -334,35 +334,18 @@
                                         <action selector="clickedAddPayment:" destination="-1" eventType="touchUpInside" id="34N-G8-Amu"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er6-cP-DqK" customClass="BaseButton" customModule="UtilityAccounting" customModuleProvider="target">
-                                    <rect key="frame" x="10" y="709" width="373" height="44"/>
-                                    <color key="backgroundColor" name="baseBlue"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="eHv-Gq-UyW"/>
-                                    </constraints>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="History Payment">
-                                        <color key="titleColor" name="baseWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="clickedHistoryPayment:" destination="-1" eventType="touchUpInside" id="OEd-jg-5LR"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="S44-nS-f3e" firstAttribute="leading" secondItem="z3T-My-RtU" secondAttribute="leading" constant="10" id="40b-rY-aKH"/>
                                 <constraint firstAttribute="trailing" secondItem="mNp-km-oLZ" secondAttribute="trailing" constant="10" id="55E-KT-JuZ"/>
+                                <constraint firstAttribute="bottom" secondItem="sU5-xH-HbC" secondAttribute="bottom" constant="24" id="CUU-z2-5ol"/>
                                 <constraint firstItem="sU5-xH-HbC" firstAttribute="top" secondItem="S44-nS-f3e" secondAttribute="bottom" constant="44" id="OPw-cN-3fc"/>
-                                <constraint firstAttribute="bottom" secondItem="er6-cP-DqK" secondAttribute="bottom" constant="40" id="TCj-JX-zMg"/>
                                 <constraint firstItem="mNp-km-oLZ" firstAttribute="top" secondItem="z3T-My-RtU" secondAttribute="top" constant="38" id="UWh-3p-KE6"/>
-                                <constraint firstAttribute="trailing" secondItem="er6-cP-DqK" secondAttribute="trailing" constant="10" id="XTG-yS-sDY"/>
                                 <constraint firstItem="mNp-km-oLZ" firstAttribute="leading" secondItem="z3T-My-RtU" secondAttribute="leading" constant="10" id="c31-EX-2Oj"/>
                                 <constraint firstItem="S44-nS-f3e" firstAttribute="top" secondItem="mNp-km-oLZ" secondAttribute="bottom" constant="16" id="cts-7H-GDJ"/>
-                                <constraint firstItem="er6-cP-DqK" firstAttribute="leading" secondItem="z3T-My-RtU" secondAttribute="leading" constant="10" id="hco-DT-nIR"/>
                                 <constraint firstItem="sU5-xH-HbC" firstAttribute="leading" secondItem="z3T-My-RtU" secondAttribute="leading" constant="10" id="ils-XH-AD8"/>
                                 <constraint firstAttribute="trailing" secondItem="sU5-xH-HbC" secondAttribute="trailing" constant="10" id="ncX-M3-lx8"/>
-                                <constraint firstItem="er6-cP-DqK" firstAttribute="top" secondItem="sU5-xH-HbC" secondAttribute="bottom" constant="16" id="wz1-eW-KCD"/>
                                 <constraint firstAttribute="trailing" secondItem="S44-nS-f3e" secondAttribute="trailing" constant="10" id="yt8-dE-mkl"/>
                             </constraints>
                         </view>

@@ -51,7 +51,7 @@ class PaymentHistoryViewController: UIViewController {
         dropDown.dataSource = data
         dropDown.anchorView = view
         dropDown.direction = .bottom
-        DropDown.appearance().textColor = .black
+        DropDown.appearance().textColor = .baseBlack
         DropDown.appearance().textFont = .regular(size: 15) ?? .boldSystemFont(ofSize: 18)
         DropDown.appearance().selectionBackgroundColor = .clear
         dropDown.addShadow()

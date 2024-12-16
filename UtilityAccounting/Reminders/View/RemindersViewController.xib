@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RemindersViewController" customModule="UtilityAccounting" customModuleProvider="target">
+            <connections>
+                <outlet property="remindersTableView" destination="d1r-lh-BYd" id="Ed0-EW-sks"/>
+                <outlet property="setReminderButton" destination="Bus-uK-TRN" id="k8F-Z5-aGj"/>
+                <outlet property="tableViewHeightConst" destination="Msf-3y-oMW" id="b9b-iF-DAm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-RU-6FY">
+                    <rect key="frame" x="0.0" y="83" width="393" height="637"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5o-0f-Dib">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="661"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d1r-lh-BYd">
+                                    <rect key="frame" x="18" y="0.0" width="357" height="661"/>
+                                    <color key="backgroundColor" name="baseWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="661" id="Msf-3y-oMW"/>
+                                    </constraints>
+                                    <color key="separatorColor" name="fieldBorder"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="d1r-lh-BYd" secondAttribute="bottom" id="POh-uL-l1z"/>
+                                <constraint firstItem="d1r-lh-BYd" firstAttribute="top" secondItem="Y5o-0f-Dib" secondAttribute="top" id="QRe-SJ-Opa"/>
+                                <constraint firstAttribute="trailing" secondItem="d1r-lh-BYd" secondAttribute="trailing" constant="18" id="U9Y-fQ-xF7"/>
+                                <constraint firstItem="d1r-lh-BYd" firstAttribute="leading" secondItem="Y5o-0f-Dib" secondAttribute="leading" constant="18" id="prL-4B-T0Y"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Y5o-0f-Dib" firstAttribute="leading" secondItem="Bax-RU-6FY" secondAttribute="leading" id="AP9-sf-b7v"/>
+                        <constraint firstItem="Y5o-0f-Dib" firstAttribute="centerX" secondItem="Bax-RU-6FY" secondAttribute="centerX" id="BUj-mf-pMU"/>
+                        <constraint firstAttribute="trailing" secondItem="Y5o-0f-Dib" secondAttribute="trailing" id="CEg-2p-ZV0"/>
+                        <constraint firstItem="Y5o-0f-Dib" firstAttribute="top" secondItem="Bax-RU-6FY" secondAttribute="top" id="PQl-i4-Z8V"/>
+                        <constraint firstAttribute="bottom" secondItem="Y5o-0f-Dib" secondAttribute="bottom" id="Tao-zR-Ehj"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bus-uK-TRN" customClass="BaseButton" customModule="UtilityAccounting" customModuleProvider="target">
+                    <rect key="frame" x="28" y="750" width="337" height="44"/>
+                    <color key="backgroundColor" name="baseBlue"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vM3-lp-90V"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="+ Set a new reminder">
+                        <color key="titleColor" name="baseWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickedSetReminder:" destination="-1" eventType="touchUpInside" id="U59-hM-TBH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bax-RU-6FY" secondAttribute="trailing" id="Eli-bq-bRV"/>
+                <constraint firstItem="Bax-RU-6FY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="Orz-cr-alo"/>
+                <constraint firstItem="Bax-RU-6FY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VBB-9M-lzg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bus-uK-TRN" secondAttribute="bottom" constant="24" id="cVp-p9-lMS"/>
+                <constraint firstItem="Bus-uK-TRN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="ezz-pW-YSI"/>
+                <constraint firstItem="Bax-RU-6FY" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kni-Hv-aKg"/>
+                <constraint firstItem="Bus-uK-TRN" firstAttribute="top" secondItem="Bax-RU-6FY" secondAttribute="bottom" constant="30" id="rZ0-mD-MN8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bus-uK-TRN" secondAttribute="trailing" constant="28" id="uNL-He-B4J"/>
+            </constraints>
+            <point key="canvasLocation" x="38.931297709923662" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.9570000171661377" green="0.98000001907348633" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseBlue">
+            <color red="0.0" green="0.49799999594688416" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="fieldBorder">
+            <color red="0.67799997329711914" green="0.83899998664855957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

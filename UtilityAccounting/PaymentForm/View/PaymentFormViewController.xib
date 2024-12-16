@@ -161,7 +161,7 @@
                                             <color key="textColor" name="baseBlack"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSy-PB-fap">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSy-PB-fap">
                                             <rect key="frame" x="0.0" y="21" width="159.33333333333334" height="41"/>
                                             <color key="backgroundColor" name="baseWhite"/>
                                             <constraints>

@@ -42,8 +42,27 @@ extension UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingsButton)
     }
     
+    func setNavigationLeftButtons() {
+        let paymentButton = UIButton(type: .custom)
+        paymentButton.setImage(.paymentHistory, for: .normal)
+        paymentButton.addTarget(self, action: #selector(clickedPaymentHistory), for: .touchUpInside)
+        let remindersButton = UIButton(type: .custom)
+        remindersButton.setImage(.reminders, for: .normal)
+        remindersButton.addTarget(self, action: #selector(clickedReminders), for: .touchUpInside)
+
+        navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: paymentButton), UIBarButtonItem(customView: remindersButton)]
+    }
+    
+    @objc func clickedPaymentHistory() {
+        self.pushViewController(PaymentHistoryViewController.self)
+    }
+    
+    @objc func clickedReminders() {
+        self.pushViewController(RemindersViewController.self)
+    }
+    
     @objc func clickedSettings() {
-//        self.pushViewController(SettingsViewController.self)
+        self.pushViewController(SettingsViewController.self)
     }
     
     @objc func clickedBack() {
