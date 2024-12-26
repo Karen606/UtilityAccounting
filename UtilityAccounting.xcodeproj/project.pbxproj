@@ -58,6 +58,11 @@
 		6B2502A22D0ED37E004B50C1 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2502A12D0ED37E004B50C1 /* SettingsViewController.xib */; };
 		6B2502A32D0ED37E004B50C1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502A02D0ED37E004B50C1 /* SettingsViewController.swift */; };
 		6B2502A52D0EE086004B50C1 /* BaseSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2502A42D0EE086004B50C1 /* BaseSwitch.swift */; };
+		6BE481B62D1DA22800E3D820 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE481B52D1DA22800E3D820 /* NetworkManager.swift */; };
+		6BE481B92D1DA25C00E3D820 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE481B82D1DA25C00E3D820 /* PrivacyViewController.swift */; };
+		6BE481BB2D1DA26800E3D820 /* PrivacyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE481BA2D1DA26800E3D820 /* PrivacyWebViewController.swift */; };
+		6BE481BD2D1DA86200E3D820 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 6BE481BC2D1DA86200E3D820 /* codemagic.yaml */; };
+		6BE481BF2D1DA94B00E3D820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BE481BE2D1DA94B00E3D820 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +119,11 @@
 		6B2502A02D0ED37E004B50C1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6B2502A12D0ED37E004B50C1 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		6B2502A42D0EE086004B50C1 /* BaseSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwitch.swift; sourceTree = "<group>"; };
+		6BE481B52D1DA22800E3D820 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6BE481B82D1DA25C00E3D820 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		6BE481BA2D1DA26800E3D820 /* PrivacyWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyWebViewController.swift; sourceTree = "<group>"; };
+		6BE481BC2D1DA86200E3D820 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
+		6BE481BE2D1DA94B00E3D820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD543F68C860A44C2232D188 /* Pods-UtilityAccounting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilityAccounting.debug.xcconfig"; path = "Target Support Files/Pods-UtilityAccounting/Pods-UtilityAccounting.debug.xcconfig"; sourceTree = "<group>"; };
 		BFF06CA88CA74DC5CC408598 /* Pods-UtilityAccounting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilityAccounting.release.xcconfig"; path = "Target Support Files/Pods-UtilityAccounting/Pods-UtilityAccounting.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +160,7 @@
 		6B2501F92D0C1BF4004B50C1 = {
 			isa = PBXGroup;
 			children = (
+				6BE481BC2D1DA86200E3D820 /* codemagic.yaml */,
 				6B2502272D0C1BFB004B50C1 /* UtilityAccounting */,
 				6B2502032D0C1BF4004B50C1 /* Products */,
 				48552887A7E805550FA2A5F8 /* Pods */,
@@ -168,6 +179,8 @@
 		6B2502272D0C1BFB004B50C1 /* UtilityAccounting */ = {
 			isa = PBXGroup;
 			children = (
+				6BE481B72D1DA25700E3D820 /* Privacy */,
+				6BE481B42D1DA22300E3D820 /* Network */,
 				6B25029F2D0ED369004B50C1 /* Settings */,
 				6B25029C2D0E18A8004B50C1 /* NotificationManager */,
 				6B2502932D0DF993004B50C1 /* ReminderForm */,
@@ -180,6 +193,7 @@
 				6B2502322D0C1C89004B50C1 /* Extensions */,
 				6B25021D2D0C1BFB004B50C1 /* AppDelegate.swift */,
 				6B25021E2D0C1BFB004B50C1 /* Assets.xcassets */,
+				6BE481BE2D1DA94B00E3D820 /* GoogleService-Info.plist */,
 				6B25021F2D0C1BFB004B50C1 /* Info.plist */,
 				6B2502212D0C1BFB004B50C1 /* LaunchScreen.storyboard */,
 				6B2502242D0C1BFB004B50C1 /* SceneDelegate.swift */,
@@ -439,6 +453,23 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		6BE481B42D1DA22300E3D820 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6BE481B52D1DA22800E3D820 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6BE481B72D1DA25700E3D820 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				6BE481B82D1DA25C00E3D820 /* PrivacyViewController.swift */,
+				6BE481BA2D1DA26800E3D820 /* PrivacyWebViewController.swift */,
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -511,6 +542,8 @@
 				6B25024F2D0C1DDA004B50C1 /* Poppins-Medium.ttf in Resources */,
 				6B2502972D0DF9CF004B50C1 /* ReminderFormViewController.xib in Resources */,
 				6B25022F2D0C1BFB004B50C1 /* LaunchScreen.storyboard in Resources */,
+				6BE481BD2D1DA86200E3D820 /* codemagic.yaml in Resources */,
+				6BE481BF2D1DA94B00E3D820 /* GoogleService-Info.plist in Resources */,
 				6B2502542D0C2677004B50C1 /* MenuViewController.xib in Resources */,
 				6B2502302D0C1BFB004B50C1 /* Root.storyboard in Resources */,
 				6B2502782D0DC9B0004B50C1 /* PaymentHistoryViewController.xib in Resources */,
@@ -567,9 +600,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE481B62D1DA22800E3D820 /* NetworkManager.swift in Sources */,
 				6B2502292D0C1BFB004B50C1 /* AppDelegate.swift in Sources */,
 				6B2502412D0C1D13004B50C1 /* UIView.swift in Sources */,
 				6B2502422D0C1D13004B50C1 /* String.swift in Sources */,
+				6BE481B92D1DA25C00E3D820 /* PrivacyViewController.swift in Sources */,
 				6B2502552D0C2677004B50C1 /* MenuViewController.swift in Sources */,
 				6B2502812D0DD5AD004B50C1 /* HistoryViewModel.swift in Sources */,
 				6B2502872D0DEA9D004B50C1 /* RemindersViewController.swift in Sources */,
@@ -593,6 +628,7 @@
 				6B25026D2D0C6245004B50C1 /* CoreDataManager.swift in Sources */,
 				6B2502682D0C513B004B50C1 /* PaymentTableViewCell.swift in Sources */,
 				6B25025E2D0C2A58004B50C1 /* PaymentFormViewController.swift in Sources */,
+				6BE481BB2D1DA26800E3D820 /* PrivacyWebViewController.swift in Sources */,
 				6B2502982D0DF9CF004B50C1 /* ReminderFormViewController.swift in Sources */,
 				6B2502492D0C1D13004B50C1 /* ViewController.swift in Sources */,
 				6B2502602D0C39EF004B50C1 /* PricesTextField.swift in Sources */,
@@ -649,7 +685,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Karen.UtilityAccounting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RentRoster.WV8Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -681,7 +717,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Karen.UtilityAccounting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RentRoster.WV8Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

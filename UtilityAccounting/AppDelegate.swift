@@ -7,13 +7,43 @@
 
 import UIKit
 import CoreData
+import Firebase
+import StoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UNUserNotificationCenter.current().delegate = self
+        NetworkManager.shared.checkConnection()
+        FirebaseApp.configure()
+        setFirstLaunch()
         return true
+    }
+    
+    func setFirstLaunch() {
+        if !UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
+            UserDefaults.standard.set(false, forKey: "showAgreebuttonFlag")
+            UserDefaults.standard.set(nil, forKey: "savedUrl")
+            requestReview()
+        }
+    }
+    
+    func saveUrl(_ url: String) {
+        UserDefaults.standard.set(url, forKey: "savedUrl")
+    }
+    
+    func getSavedUrl() -> String? {
+        return UserDefaults.standard.string(forKey: "savedUrl")
+    }
+    
+    func requestReview() {
+        if #available(iOS 14.0, *) {
+            let scene = UIApplication.shared.connectedScenes.first
+            if let windowScene = scene as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: windowScene)
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle
